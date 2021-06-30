@@ -1,0 +1,7 @@
+---
+- hosts: 192.168.7.80
+  tasks:
+       
+     - name: pull changes Main
+       shell: chdir=test/webhookTest git pull
+       when: tower_webhook_payload.ref == "refs/heads/main"
